@@ -1,9 +1,3 @@
-/*
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -54,9 +48,7 @@
 							event.stopPropagation();
 
 							$(this).blur();
-
 						}
-
 					})
 					.on('blur focus', function() {
 						$this.val($.trim($this.val()));
@@ -69,14 +61,12 @@
 						$this
 							.css('height', 'auto')
 							.css('height', $this.prop('scrollHeight') + 'px');
-
 					})
 					.on('keyup', function(event) {
 
 						if (event.keyCode == 9)
 							$this
 								.select();
-
 					})
 					.triggerHandler('--init');
 
@@ -86,7 +76,6 @@
 						$this
 							.css('max-height', '10em')
 							.css('overflow-y', 'auto');
-
 			});
 
 	// Menu.
@@ -108,28 +97,24 @@
 			}, 350);
 
 			return true;
-
 		};
 
 		$menu._show = function() {
 
 			if ($menu._lock())
 				$body.addClass('is-menu-visible');
-
 		};
 
 		$menu._hide = function() {
 
 			if ($menu._lock())
 				$body.removeClass('is-menu-visible');
-
 		};
 
 		$menu._toggle = function() {
 
 			if ($menu._lock())
 				$body.toggleClass('is-menu-visible');
-
 		};
 
 		$menu
@@ -154,7 +139,6 @@
 					window.setTimeout(function() {
 						window.location.href = href;
 					}, 350);
-
 			})
 			.append('<a class="close" href="#menu">Close</a>');
 
