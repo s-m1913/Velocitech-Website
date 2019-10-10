@@ -33,3 +33,4 @@ if (mysqli_num_rows($stmt) > 0) {
 mysqli_close($conn);
 echo json_encode($response);
 ?>
+{"success":1,"data":[{"idProject":"1","projectName":"Test Project","projectIsCurrent ":null,"projectArchive":"0","projectLink":"Test Project URL","projectShortDescription":"This is a project header","projectFullDescription":"This is a full project description"}]}
