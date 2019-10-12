@@ -50,34 +50,34 @@
 					</header>
 					<section class="tiles">
 						
-            <?php
-                include ('assets/php/db_connect.php');
+                        <?php
+                            include ('assets/php/db_connect.php');
         
-                $sqlget = "SELECT * FROM `projectList`;";
-                $stmt = mysqli_query ($conn, $sqlget) or die ('data error');
-                $count = 1;
+                            $sqlget = "SELECT * FROM `projectList`;";
+                            $stmt = mysqli_query ($conn, $sqlget) or die ('data error');
+                            $count = 1;
 
-                while($row = mysqli_fetch_assoc($stmt)){
+                            while($row = mysqli_fetch_assoc($stmt)){
                     
-                    $style = "style".$count;
-                    $pic = "pic".$count;
+                                $style = "style".$count;
+                                
                     
-                    echo "<article class='",$style,"'>";
-                    echo "<span class='image'>";
-                    echo "<img src='images/",$pic,".jpg' alt='' />";
-                    echo "</span>";
-                    echo "<a href=",$row['projectLink'],">";
-                    echo "<h2>",$row['projectName'],"</h2>";
-                    echo "<div class='content'>";
-                    echo "<p>",$row['projectShortDescription'],"</p>";
-                    echo "</div>";
-                    echo "</a>";
-                    echo "</article>"; 
+                                echo "<article class='",$style,"'>";
+                                echo "<span class='image'>";
+                                echo "<img src='images/",$row['projectPicture'],"' alt='' />";
+                                echo "</span>";
+                                echo "<a href=",$row['projectLink'],">";
+                                echo "<h2>",$row['projectName'],"</h2>";
+                                echo "<div class='content'>";
+                                echo "<p>",$row['projectShortDescription'],"</p>";
+                                echo "</div>";
+                                echo "</a>";
+                                echo "</article>"; 
                     
-                    $count = $count + 1;
-                    if ($count>15) $count === 1;
-                }
-            ?>
+                                $count = $count + 1;
+                                if ($count>15) $count === 1;
+                            }
+                        ?>
                     </section>
 				</div>
 			</div>
@@ -87,7 +87,9 @@
 				<div class="inner">
 					<section>
 						<h2>Get in touch</h2>
-						<form method="post" action="#">
+
+                        <!--Email Form-->
+						<form method="post" action="assets/php/emailform.php">
 
 							<div class="fields">
 								<div class="field half">
@@ -105,8 +107,8 @@
 
 							<ul class="actions">
 								<li>
-                                    <input type="submit" value="Send" class="primary" />
-                                    <a href="emailform.php">Email Form</a>
+                                    <input type="submit" value="Send" href="emailform.php"/>
+                                    <!--<a href="emailform.php">Email Form</a>-->
                                 </li>
 							</ul>
 						</form>
@@ -125,7 +127,7 @@
 						</ul>
 					</section>
 					<ul class="copyright">
-						<li>&copy; VelociTech Software Solutions. All rights reserved</li><li>Design: <a href="http://velocitech.tech">VelociTech</a></li>
+						<li>&copy; VelociTech Software Solutions. All rights reserved</li>
 					</ul>
 				</div>
 			</footer>

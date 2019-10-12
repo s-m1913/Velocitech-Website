@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\php"
+    "\\assets\\css",
+    "\\assets\\webfonts"
   ],
+  "SelectedNode": "\\assets\\webfonts\\fa-brands-400.ttf",
   "PreviewInSolutionExplorer": false
 }
