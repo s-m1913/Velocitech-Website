@@ -60,8 +60,7 @@
                             while($row = mysqli_fetch_assoc($stmt)){
                     
                                 $style = "style".$count;
-                                
-                    
+                                              
                                 echo "<article class='",$style,"'>";
                                 echo "<span class='image'>";
                                 echo "<img src='images/",$row['projectPicture'],"' alt='' />";

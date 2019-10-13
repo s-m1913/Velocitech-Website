@@ -29,11 +29,11 @@
             </div>
             <label for="username">Username</label>
             <br />
-            <input type="text" id="user">
+            <input type="text" name="user" id="user">
             <br />
             <label for="password">Password</label>
             <br />
-            <input type="password" id="password">
+            <input type="password" name="pass" id="pass">
             <br />
             <button type="submit">Sign In</button>
             <br />

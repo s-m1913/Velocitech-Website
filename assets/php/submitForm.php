@@ -4,6 +4,8 @@ include 'db_connect.php';
 $response = array();
 $sql = $_POST["query"];
 
+echo '<h2>',$sql,'</h2>';
+
 if (mysqli_query ($conn, $sql)) {
 
     $response["success"] = 1;
