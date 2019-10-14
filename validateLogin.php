@@ -71,16 +71,17 @@
                 } 
             }
         }
+
         function createButtonForNewProject(){
             
-            echo '<button type="submit" name="create">Add Project</button>';
+            echo '<button type="submit" name="button" value="create">Add Project</button>';
             echo '<br /></div></div></form>';
         }
         
         function createButtonForExistingProject(){
             
-            echo '<button type="submit" name="update">Update</button>';
-            echo '<button type="submit" name="delete">Delete</button>';
+            echo '<button type="submit" name="button" value="update">Update</button>';
+            echo '<button type="submit" name="button" value="delete">Delete</button>';
             echo '<br /></div></div></form>';
         }
 
@@ -95,11 +96,18 @@
                 echo '<h2>',$projectDetails['name'],'</h2>';
             }else echo '<h2>New Project</h2>';
             
-            echo '</div>';           
+            echo '</div>'; 
+            
             echo '<label for="current">Current</label>';
-            echo '<input class="checkbox-adjust" type="checkbox" name="current" id="current">';
+            if (isCurrent === 1){
+                echo '<input class="checkbox-adjust" type="checkbox" name="current" id="current" checked>';
+            }else echo '<input class="checkbox-adjust" type="checkbox" name="current" id="current">';
+            
             echo '<label for="archive">Archive</label>';
-            echo '<input class="checkbox-adjust" type="checkbox" name="archive" id="archive"><br />';         
+            if (isArchive === 1){
+                echo '<input class="checkbox-adjust" type="checkbox" name="archive" id="archive" checked><br />';  
+            }else echo '<input class="checkbox-adjust" type="checkbox" name="archive" id="archive"><br />'; 
+
             echo '<label for="name">Project Name </label><br />';
             echo '<input type="text" name="name" id="name" value="',$projectDetails['name'],'"><br />';           
             echo '<label for="header">Header </label><br />';
